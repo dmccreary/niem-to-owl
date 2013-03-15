@@ -15,7 +15,6 @@ This XQuery Script Transforms NIEM Core Elements from input XML Schema file to a
 	
 :)
 		
-import module namespace style = "http://style.syntactica.com/web" at "../../../modules/style.xqm";
 declare namespace s="http://niem.gov/niem/structures/2.0";
 declare namespace nc="http://niem.gov/niem/niem-core/2.0";
 declare namespace niem-xsd="http://niem.gov/niem/proxy/xsd/2.0";
@@ -24,7 +23,7 @@ declare namespace j="http://niem.gov/niem/domains/jxdm/4.0";
 declare namespace i="http://niem.gov/niem/appinfo/2.0";
 
 (: This is the file path.  Change this line if you put the file into another location :)
-let $file-path := '/db/apps/niem-to-own/data/niem-core.xsd'
+let $file-path := '/db/apps/niem-to-owl/data/niem-core.xsd'
 let $doc := doc($file-path)
 
 return

@@ -17,7 +17,7 @@ I have tested this script using the eXist native XML database.  To use the scrip
 
 I originally created this after a question on a webinar.
 The normal way I did this was to convert the NIEM into a metadata registry and then generate the OWL file.
-However since the core NIEM elements are in a single XSL file I pointed out the transform would
+However since the core NIEM elements are in a single XSD file I pointed that a direct transform would
 be easy.  I like OWL files because they were way to validate that my transforms to a sub-schema were correct and that all
 classes and superclasses were included.
 

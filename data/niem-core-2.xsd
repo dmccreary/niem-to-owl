@@ -1,0 +1,2198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:iso_639-3="http://niem.gov/niem/iso_639-3/2.0" xmlns:twpdes="http://niem.gov/niem/twpdes/2.0" xmlns:iso_4217="http://niem.gov/niem/iso_4217/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:fips_6-4="http://niem.gov/niem/fips_6-4/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:dod_jcs-pub2.0="http://niem.gov/niem/dod_jcs-pub2.0-misc/2.0" xmlns:nonauth="http://niem.gov/niem/nonauthoritative-code/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nga="http://niem.gov/niem/nga/2.0" xmlns:unece="http://niem.gov/niem/unece_rec20-misc/2.0" targetNamespace="http://niem.gov/niem/niem-core/2.0" version="1">
+    <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+    <xsd:import schemaLocation="../../dod_jcs-pub2.0-misc/2.0/dod_jcs-pub2.0-misc.xsd" namespace="http://niem.gov/niem/dod_jcs-pub2.0-misc/2.0"/>
+    <xsd:import schemaLocation="../../fbi/2.0/fbi.xsd" namespace="http://niem.gov/niem/fbi/2.0"/>
+    <xsd:import schemaLocation="../../fips_6-4/2.0/fips_6-4.xsd" namespace="http://niem.gov/niem/fips_6-4/2.0"/>
+    <xsd:import schemaLocation="../../iso_4217/2.0/iso_4217.xsd" namespace="http://niem.gov/niem/iso_4217/2.0"/>
+    <xsd:import schemaLocation="../../iso_639-3/2.0/iso_639-3.xsd" namespace="http://niem.gov/niem/iso_639-3/2.0"/>
+    <xsd:import schemaLocation="../../nga/2.0/nga.xsd" namespace="http://niem.gov/niem/nga/2.0"/>
+    <xsd:import schemaLocation="../../nonauthoritative-code/2.0/nonauthoritative-code.xsd" namespace="http://niem.gov/niem/nonauthoritative-code/2.0"/>
+    <xsd:import schemaLocation="../../proxy/xsd/2.0/xsd.xsd" namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+    <xsd:import schemaLocation="../../twpdes/2.0/twpdes.xsd" namespace="http://niem.gov/niem/twpdes/2.0"/>
+    <xsd:import schemaLocation="../../unece_rec20-misc/2.0/unece_rec20-misc.xsd" namespace="http://niem.gov/niem/unece_rec20-misc/2.0"/>
+    <xsd:complexType name="ActivityConveyanceAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ActivityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ConveyanceReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ActivityDocumentAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ActivityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ActivityItemAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ActivityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ActivityOrganizationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ActivityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ActivityPersonAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ActivityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ActivityType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ActivityIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ActivityCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ActivityDateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ActivityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ActivityName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ActivityStatus" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ActivityReasonText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ActivityDisposition" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="AddressGridType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:AddressGridID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AddressGridText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="AddressType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:AddressRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="AmountType">
+        <xsd:simpleContent>
+            <xsd:extension base="niem-xsd:decimal">
+                <xsd:attribute ref="nc:currencyCode" use="optional"/>
+                <xsd:attribute ref="nc:currencyText" use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AngularMeasureType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:AngularDegreeValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AngularMinuteValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AngularSecondValue" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="AngularMinuteSimpleType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxExclusive value="60"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="AngularMinuteType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:AngularMinuteSimpleType">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="AngularSecondSimpleType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxExclusive value="60"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="AngularSecondType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:AngularSecondSimpleType">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ApplicationNameType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AreaType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:AreaDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AreaPolygonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AreaPolygonGeographicCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AreaCircularDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AreaCircularRegion" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AreaGeographicCode" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="AssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:AssociationBeginDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:AssociationEndDate" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="BinaryType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:BinaryID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryAvailableLocationText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryAvailableIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryObject" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryCaptureDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryCapturer" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryFormatID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryFormatStandardName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryLocationURI" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinarySizeValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BinaryCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="BiometricType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:BiometricID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricValueText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricEncodingMethodText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricStatus" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricImage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricBinary" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricLabAnalysisText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricCapturer" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricTester" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricCaptureDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricCaptureSourceText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricCaptureDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricTestMethodText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricTestDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricTestDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricAccuracyDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricRepositoryOrganization" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:BiometricRepositoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CapabilityType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CaseDispositionDecisionType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CaseDispositionType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:DispositionType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:CaseDispositionFinalDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseDispositionDecision" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CaseType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:ActivityType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:CaseTitleText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseGeneralCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseYearDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseTrackingID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseSubCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseDocketID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseResolutionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CaseFiling" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CircularRegionType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ClothingType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CommercialVehicleType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:VehicleType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:VehicleAxleQuantity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:VehicleCurrentWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:VehicleGrossLadenSumWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:VehicleGrossLadenUnitWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:VehicleMaximumLoadWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:VehicleUnladenWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ContactInformationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ContactMeans" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactEntity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactEntityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactResponder" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ConveyanceType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:TangibleItemType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ConveyanceCargoText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ConveyanceEngineQuantity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ConveyanceRegistrationPlateIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ConveyanceMotorizedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ConveyanceSalesTaxPercentage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ConveyanceTowedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ConveyanceUse" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CrossStreetType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:CrossStreetDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CrossStreetRelativeLocation" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="DNAType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="DateRangeType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:StartDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:EndDate" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="DateType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:DateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DateAccuracyCode" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element ref="nc:MarginDuration" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="DirectionCodeSimpleType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="E"/>
+            <xsd:enumeration value="ENE"/>
+            <xsd:enumeration value="ESE"/>
+            <xsd:enumeration value="N"/>
+            <xsd:enumeration value="NE"/>
+            <xsd:enumeration value="NNE"/>
+            <xsd:enumeration value="NNW"/>
+            <xsd:enumeration value="NW"/>
+            <xsd:enumeration value="S"/>
+            <xsd:enumeration value="SE"/>
+            <xsd:enumeration value="SSE"/>
+            <xsd:enumeration value="SSW"/>
+            <xsd:enumeration value="SW"/>
+            <xsd:enumeration value="W"/>
+            <xsd:enumeration value="WNW"/>
+            <xsd:enumeration value="WSW"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="DirectionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:DirectionCodeSimpleType">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DispositionType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:DispositionEntity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DispositionDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DispositionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DispositionReasonText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DispositionReportedAuthorityText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DispositionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DispositionCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DispositionInstrument" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="DocumentType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentAlternativeTitleText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentApplicationName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentApprovedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentBinary" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCategoryID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCategoryName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentContentListText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCopyrightIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCountryCode" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCreationDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentDispositionAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentDispositionInstructionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentDisputedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentDisputedReasonText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentEntrySubmitter" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentFileControlID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentFiledDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentFileExtensionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentFileName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentFormatText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentGroupID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentInformationCutOffDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentIntelligenceCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentKeywordText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentLastModifiedDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentLocation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentLocationURI" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentManagementCyclePeriodText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentMediaCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentMediumText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentOtherAddresseeName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentPermanentRecordIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentPostDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentPrivacyActIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentPublicationDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentReceivedDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentRecipient" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentRelatedResourceText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentRelationText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentRightsText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSequenceID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSource" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSourceText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentStatus" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSubjectCode" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSubjectText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSummaryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSupplementalMarkingText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentTitleText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentVitalIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:SecurityLevelText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentAuthor" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentContributor" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCoverage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentCreator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentFormatCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentLanguage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSubmissionFee" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentSubmitter" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="EntityType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:EntityRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="FacilityAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:FacilityReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="FacilityDocumentAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:FacilityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="FacilityImageAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:FacilityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ImageReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="FacilityOrganizationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:FacilityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="FacilityPersonAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:FacilityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="FacilityType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:FacilityIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:FacilityName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:FacilityCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:FacilityCommercialIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:FacilityLocation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:FacilityContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:FacilityContainsItem" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="FingerprintSetType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="FullTelephoneNumberType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:TelephoneNumberFullID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:TelephoneSuffixID" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="GeographicElevationMeasureType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:MeasureType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:GeographicElevationDatumID" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="HighwayType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="IdentificationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:IdentificationID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:IdentificationCategory" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:IdentificationCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:IdentificationEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:IdentificationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:IdentificationJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:IdentificationSourceText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:IdentificationStatus" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ImageType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:BinaryType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ImageHeightValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ImageLocation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ImageOperator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ImageWidthValue" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ImmediateFamilyAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonParentReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonChildReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:FamilyKinshipCategory" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="InjuryType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="InstantMessengerType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:InstantMessengerClientName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:InstantMessengerScreenID" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="IntangibleItemType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:ItemType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:IntellectualItemBusinessAreaText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="InternationalTelephoneNumberType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:TelephoneCountryCodeID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:TelephoneNumberID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:TelephoneSuffixID" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="IntoxicationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ItemDispositionType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:DispositionType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ItemHoldingType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:ActivityType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ItemLocationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LocationReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ItemType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ItemName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemActionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemBarCodeIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemConditionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemDealerIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemDisposition" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemOtherIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemOwner" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemOwnerAppliedID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemOwnerPurchasedValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemPossessionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemPossessor" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemReceiptIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemRFIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemSerialIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemStateIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemStatus" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemUsageText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemVisibleID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:WeaponIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:WeaponUsageIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ItemValueType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ItemValueAmount" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemValueAssigningMethodText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemValueDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemValueDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemValueTaxIncludedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemValueAssigner" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="JurisdictionType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LocationCityName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationCounty" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:JurisdictionIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:JurisdictionText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="LatitudeCoordinateType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LatitudeDegreeValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LatitudeMinuteValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LatitudeSecondValue" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="LatitudeDegreeSimpleType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="90"/>
+            <xsd:minInclusive value="-90"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="LatitudeDegreeType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:LatitudeDegreeSimpleType">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LengthMeasureType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:MeasureType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LengthUnitCode" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="LocaleType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LocaleCensusBlockID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleCensusTractID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleCommunityName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleDistrictName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleEmergencyServicesCityName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleFireJurisdictionID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleJudicialDistrictCode" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleJudicialDistrictName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleNeighborhoodName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocalePoliceBeatText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocalePoliceGridText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocalePoliceJurisdictionID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleRegionName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleSubdivisionName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleZoneName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocaleEmergencyServicesJurisdictionID" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="LocationContactInformationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LocationReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="LocationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LocationAddress" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationAddressGrid" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationAltitudeMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationArea" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationCategory" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationCrossStreet" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationDepthMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationGeographicElevation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationHighway" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationLandmarkText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationLocale" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationMapLocation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationMGRSCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationRangeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationRelativeLocation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationSurroundingAreaDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationTwoDimensionalGeographicCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationUTMCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="LongitudeCoordinateType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LongitudeDegreeValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LongitudeMinuteValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LongitudeSecondValue" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="LongitudeDegreeSimpleType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:maxExclusive value="180"/>
+            <xsd:minInclusive value="-180"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="LongitudeDegreeType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:LongitudeDegreeSimpleType">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MGRSCoordinateType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:UTMCoordinateType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:MGRSCoordinateID" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element ref="nc:MGRSCoordinateSquareID" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="MapLocationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:MapCoordinateFullText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapElevationCoordinateText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapHorizontalCoordinateText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapLocationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapPageID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapQuadrantText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapVersionID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MapVerticalCoordinateText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="MeasureMetadataType">
+        <xsd:complexContent>
+            <xsd:extension base="s:MetadataType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:MeasureDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:Measurer" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="MeasurePointValueType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:decimal">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+                <xsd:attribute ref="nc:pointValueMargin" use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MeasureRangeValueType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:RangeMinimumValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:RangeMaximumValue" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="MeasureType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:MeasureValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MeasureUnitText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MeasureCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MeasureEstimatedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="MedicalConditionType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:MedicalConditionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MedicalConditionCauseText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MedicalConditionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MedicalConditionPresentIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:MedicalConditionSeverityText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="MetadataType">
+        <xsd:complexContent>
+            <xsd:extension base="s:MetadataType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:AdministrativeID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CommentText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CommentTitleText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DistributionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:EffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LanguageText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LastUpdatedDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LastVerifiedDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ProbabilityNumeric" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:QualityCommentText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:QualityCommentTitleText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:QualityValidityCode" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ReliabilityNumeric" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ReportedDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ReportingOrganizationText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ReportingPersonRoleText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ReportingPersonText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:SensitivityText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:CreatorName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:SourceIDText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:SourceContactPersonText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PublisherName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:RepositoryID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:SourceText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="MilitarySummaryType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="NANPTelephoneNumberType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:TelephoneAreaCodeID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:TelephoneExchangeID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:TelephoneLineID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:TelephoneSuffixID" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="NonNegativeDecimalSimpleType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="NonNegativeDecimalType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:NonNegativeDecimalSimpleType">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="NumericType">
+        <xsd:simpleContent>
+            <xsd:extension base="niem-xsd:decimal">
+                <xsd:attribute ref="nc:confidenceNumeric" use="optional"/>
+                <xsd:attribute ref="nc:toleranceNumeric" use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ObligationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="OrganizationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:OrganizationReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="OrganizationContactInformationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:OrganizationReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsPrimaryIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsEmergencyIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsDayIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsEveningIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsNightIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="OrganizationFacilityAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:FacilityReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="OrganizationItemAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:OrganizationReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="OrganizationLocationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:LocationReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="OrganizationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:OrganizationAbbreviationText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationActivityText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationBranchName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationCategory" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationDayContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationDoingBusinessAsName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationEmergencyContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationEstablishedDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationEveningContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationIncorporatedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationLocalIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationLocation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationNightContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationOtherIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationParent" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationPrimaryContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationPrincipalOfficial" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationStatus" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationSubUnit" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationSubUnitName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationTaxIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationTerminationDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationUnitName" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="PercentageSimpleType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="PercentageType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:PercentageSimpleType">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonContactInformationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsPrimaryIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsHomeIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsWorkIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsEmergencyIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsDayIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsEveningIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ContactInformationIsNightIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonConveyanceAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ConveyanceReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonDocumentAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:DocumentReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonItemAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonLanguageType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:Language" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonComprehendsSpokenLanguageIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonReadsLanguageIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSpeaksLanguageIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonWritesLanguageIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonLocationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:LocationReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonNameTextType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:ProperNameTextType">
+                <xsd:attribute ref="nc:personNameInitialIndicator" use="optional"/>
+                <xsd:attribute ref="s:sequenceID" use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonNameType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonNamePrefixText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonGivenName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMiddleName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSurName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonNameSuffixText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMaidenName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonFullName" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+                <xsd:attribute ref="nc:personNameCommentText" use="optional"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonOrganizationAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:OrganizationReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:PersonAccentText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonAgeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonAgeMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonAlternateName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonBirthLocation" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonBloodType" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonBodyXRaysAvailable" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonBuildText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonCapability" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonCircumcisionIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonCitizenship" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonClothing" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonComplexionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonDeathDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonDependentQuantity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonDigitalImage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonDigitizedSignatureImage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonDisguiseDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonDNA" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonDonorOrgan" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonEducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonEthnicity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonEyeColor" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonEyewearDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonFacialHairText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonFingerprintSet" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonGeneralAppearanceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHairAppearanceText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHairCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHairColor" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHairLengthText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHairStyleText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHandednessText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonHumanResourceIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonInjury" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonIntoxication" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonJewelryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonLanguageEnglishIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonLearningDisabilityText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonLivingIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMaritalStatusText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMedicalCondition" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMedicalDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMedicalFileIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMedicationRequiredText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMentalStateText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMilitarySummary" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonMoodDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonNationalIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonNationalityText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonOrganDonatorIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonOtherIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonPassportIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonPhysicalDisabilityText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonPhysicalFeature" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonPrimaryLanguage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonRace" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonReligionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonResident" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSecondaryLanguage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSecurityClearance" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSex" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSexualOrientationText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSkinTone" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSpeechDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonSSNIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonStateIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonTaxIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonTooth" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonUSCitizenIndicator" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonVisionPrescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonWeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonXRayImage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PersonNationality" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PersonUnionAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:PersonAssociationType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PhysicalFeatureType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ProperNameTextType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:TextType">
+                <xsd:attribute ref="nc:formCode" use="optional"/>
+                <xsd:attribute ref="nc:scriptCode" use="optional"/>
+                <xsd:attribute ref="nc:transliterationCode" use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PropertyType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:RoleOfItemReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PropertySeizer" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PropertyCurrentResaleValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PropertyHolding" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PropertyRecoveredValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:PropertySeizedLocation" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="QuantityType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:NumericType">
+                <xsd:attribute ref="nc:quantityUnitText" use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RelatedActivityAssociationType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:AssociationType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ActivityReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ActivityRelationText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="RelativeLocationHeadingSimpleType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxExclusive value="360"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="RelativeLocationHeadingType">
+        <xsd:simpleContent>
+            <xsd:extension base="nc:RelativeLocationHeadingSimpleType">
+                <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RelativeLocationType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:RelativeLocationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:RelativeLocationDirection" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:RelativeLocationDistanceText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:RelativeLocationHeadingValue" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:RelativeLocationReferencePoint" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="SpeedMeasureType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:MeasureType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="StatusType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:StatusText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StatusDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StatusDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StatusIssuerIdentification" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StatusIssuerText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="StreetType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:StreetFullText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StreetNumberText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StreetPredirectionalText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StreetName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StreetCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StreetPostdirectionalText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:StreetExtensionText" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="StructuredAddressType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="TangibleItemType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:ItemType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:ItemAgeMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemBinary" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemBrandName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemCategory" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemColor" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemHeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemImage" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemLengthMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemMakeName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemModelName" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemModelYearDate" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemQuantity" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemSizeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemStyle" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:ItemWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="TelephoneNumberType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:TelephoneNumberRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="TextType">
+        <xsd:simpleContent>
+            <xsd:extension base="niem-xsd:string">
+                <xsd:attribute ref="nc:languageCode" use="optional"/>
+                <xsd:attribute ref="nc:partialIndicator" use="optional"/>
+                <xsd:attribute ref="nc:truncationIndicator" use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TimeMeasureType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:MeasureType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:TimeUnitCode" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ToothType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="TwoDimensionalGeographicCoordinateType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:GeographicDatumCode" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element ref="nc:GeographicCoordinateLatitude" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element ref="nc:GeographicCoordinateLongitude" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="UTMCoordinateType">
+        <xsd:complexContent>
+            <xsd:extension base="s:ComplexObjectType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:UTMCoordinateID" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="nc:UTMDatumID" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element ref="nc:UTMEastingValue" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element ref="nc:UTMGridZoneID" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element ref="nc:UTMGridZoneSquareID" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element ref="nc:UTMNorthingValue" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="VehicleType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:ConveyanceType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="WeightMeasureType">
+        <xsd:complexContent>
+            <xsd:extension base="nc:MeasureType">
+                <xsd:sequence>
+                    <xsd:element ref="nc:WeightUnitCode" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:attribute name="confidenceNumeric" type="nc:PercentageSimpleType"/>
+    <xsd:attribute name="currencyCode" type="iso_4217:CurrencyCodeSimpleType"/>
+    <xsd:attribute name="currencyText" type="xsd:string"/>
+    <xsd:attribute name="formCode" type="twpdes:ProperNameFormCategoryCodeSimpleType"/>
+    <xsd:attribute name="languageCode" type="iso_639-3:LanguageCodeSimpleType"/>
+    <xsd:attribute name="partialIndicator" type="xsd:boolean"/>
+    <xsd:attribute name="personNameCommentText" type="xsd:string"/>
+    <xsd:attribute name="personNameInitialIndicator" type="xsd:boolean"/>
+    <xsd:attribute name="pointValueMargin" type="xsd:decimal"/>
+    <xsd:attribute name="quantityUnitText" type="xsd:string"/>
+    <xsd:attribute name="scriptCode" type="twpdes:ProperNameScriptCodeSimpleType"/>
+    <xsd:attribute name="toleranceNumeric" type="xsd:decimal"/>
+    <xsd:attribute name="transliterationCode" type="twpdes:ProperNameTransliterationCodeSimpleType"/>
+    <xsd:attribute name="truncationIndicator" type="xsd:boolean"/>
+    <xsd:element name="ActivityReference" type="s:ReferenceType"/>
+    <xsd:element name="Activity" type="nc:ActivityType" nillable="true"/>
+    <xsd:element name="ActivityCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ActivityConveyanceAssociation" type="nc:ActivityConveyanceAssociationType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ActivityDateRepresentation" name="ActivityDate" type="nc:DateType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ActivityDateRepresentation" name="ActivityDateRange" type="nc:DateRangeType" nillable="true"/>
+    <xsd:element name="ActivityDateRepresentation" abstract="true"/>
+    <xsd:element name="ActivityDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ActivityDisposition" type="nc:DispositionType" nillable="true"/>
+    <xsd:element name="ActivityDocumentAssociation" type="nc:ActivityDocumentAssociationType" nillable="true"/>
+    <xsd:element name="ActivityIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ActivityItemAssociation" type="nc:ActivityItemAssociationType" nillable="true"/>
+    <xsd:element name="ActivityName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ActivityReasonText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ActivityRelationText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ActivityStatus" type="nc:StatusType" nillable="true"/>
+    <xsd:element name="AddressReference" type="s:ReferenceType"/>
+    <xsd:element name="Address" type="nc:AddressType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:AddressDeliveryPoint" name="AddressBuildingText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="AddressDeliveryPoint" abstract="true"/>
+    <xsd:element substitutionGroup="nc:AddressDeliveryPoint" name="AddressDeliveryPointID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element substitutionGroup="nc:AddressRepresentation" name="AddressFullText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="AddressGrid" type="nc:AddressGridType" nillable="true"/>
+    <xsd:element name="AddressGridID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="AddressGridText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="AddressRepresentation" abstract="true"/>
+    <xsd:element substitutionGroup="nc:AddressDeliveryPoint" name="AddressSecondaryUnitText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="AdministrativeID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="Agency" type="nc:OrganizationType" nillable="true"/>
+    <xsd:element name="AngularDegreeValue" type="niem-xsd:integer" nillable="true"/>
+    <xsd:element name="AngularMeasure" type="nc:AngularMeasureType" nillable="true"/>
+    <xsd:element name="AngularMinute" type="nc:AngularMinuteType" nillable="true"/>
+    <xsd:element name="AngularMinuteValue" type="nc:AngularMinuteType" nillable="true"/>
+    <xsd:element name="AngularSecond" type="nc:AngularSecondType" nillable="true"/>
+    <xsd:element name="AngularSecondValue" type="nc:AngularSecondType" nillable="true"/>
+    <xsd:element name="AreaCircularDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="AreaCircularRegion" type="nc:CircularRegionType" nillable="true"/>
+    <xsd:element name="AreaDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="AreaGeographicCode" type="nc:TextType" nillable="true"/>
+    <xsd:element name="AreaPolygonDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="AreaPolygonGeographicCoordinate" type="nc:TwoDimensionalGeographicCoordinateType" nillable="true"/>
+    <xsd:element name="Association" type="nc:AssociationType" nillable="true"/>
+    <xsd:element name="AssociationBeginDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="AssociationEndDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="Binary" type="nc:BinaryType" nillable="true"/>
+    <xsd:element name="BinaryAvailableIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="BinaryAvailableLocationText" type="nc:TextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:BinaryObject" name="BinaryBase64Object" type="niem-xsd:base64Binary" nillable="true"/>
+    <xsd:element name="BinaryCaptureDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="BinaryCapturer" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="BinaryCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BinaryDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BinaryFormatID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="BinaryFormatStandardName" type="nc:TextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:BinaryObject" name="BinaryHexObject" type="niem-xsd:hexBinary" nillable="true"/>
+    <xsd:element name="BinaryID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="BinaryLocationURI" type="niem-xsd:anyURI" nillable="true"/>
+    <xsd:element name="BinaryObject" abstract="true"/>
+    <xsd:element name="BinarySizeValue" type="nc:NonNegativeDecimalType" nillable="true"/>
+    <xsd:element name="Biometric" type="nc:BiometricType" nillable="true"/>
+    <xsd:element name="BiometricAccuracyDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricBinary" type="nc:BinaryType" nillable="true"/>
+    <xsd:element name="BiometricCaptureDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="BiometricCaptureDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricCaptureSourceText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricCapturer" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="BiometricDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricEncodingMethodText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="BiometricImage" type="nc:ImageType" nillable="true"/>
+    <xsd:element name="BiometricLabAnalysisText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricRepositoryDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricRepositoryOrganization" type="nc:OrganizationType" nillable="true"/>
+    <xsd:element name="BiometricStatus" type="nc:StatusType" nillable="true"/>
+    <xsd:element name="BiometricTestDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="BiometricTestDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricTestMethodText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="BiometricTester" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="BiometricValueText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CalendarDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="CaseCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CaseDispositionDecision" type="nc:CaseDispositionDecisionType" nillable="true"/>
+    <xsd:element name="CaseDispositionFinalDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="CaseDocketID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="CaseFiling" type="nc:DocumentType" nillable="true"/>
+    <xsd:element name="CaseGeneralCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CaseResolutionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CaseSubCategoryText" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="CaseTitleText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CaseTrackingID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="CaseYearDate" type="niem-xsd:gYear" nillable="true"/>
+    <xsd:element name="CaveatText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CommentText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CommentTitleText" type="nc:TextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ContactMeans" name="ContactEmailID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="ContactEntity" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="ContactEntityDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ContactTelephoneNumber" name="ContactFaxNumber" type="nc:TelephoneNumberType" nillable="true"/>
+    <xsd:element name="ContactInformationReference" type="s:ReferenceType"/>
+    <xsd:element name="ContactInformation" type="nc:ContactInformationType" nillable="true"/>
+    <xsd:element name="ContactInformationDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ContactInformationIsDayIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ContactInformationIsEmergencyIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ContactInformationIsEveningIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ContactInformationIsHomeIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ContactInformationIsNightIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ContactInformationIsPrimaryIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ContactInformationIsWorkIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ContactMeans" name="ContactInstantMessenger" type="nc:InstantMessengerType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ContactMeans" name="ContactMailingAddress" type="nc:AddressType" nillable="true"/>
+    <xsd:element name="ContactMeans" abstract="true"/>
+    <xsd:element substitutionGroup="nc:ContactTelephoneNumber" name="ContactMobileTelephoneNumber" type="nc:TelephoneNumberType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ContactTelephoneNumber" name="ContactPagerNumber" type="nc:TelephoneNumberType" nillable="true"/>
+    <xsd:element name="ContactResponder" type="nc:PersonType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ContactMeans" name="ContactTelephoneNumber" type="nc:TelephoneNumberType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ContactMeans" name="ContactWebsiteURI" type="niem-xsd:anyURI" nillable="true"/>
+    <xsd:element name="ConveyanceReference" type="s:ReferenceType"/>
+    <xsd:element name="ConveyanceCargoText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ConveyanceEngineQuantity" type="niem-xsd:nonNegativeInteger" nillable="true"/>
+    <xsd:element name="ConveyanceMotorizedIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ConveyanceRegistrationPlateIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ConveyanceSalesTaxPercentage" type="nc:PercentageType" nillable="true"/>
+    <xsd:element name="ConveyanceTowedIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ConveyanceUse" abstract="true"/>
+    <xsd:element name="CreatorName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CrossStreetDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="CrossStreetRelativeLocation" type="nc:RelativeLocationType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:DateRepresentation" name="Date" type="niem-xsd:date" nillable="true"/>
+    <xsd:element name="DateAccuracyCode" type="twpdes:DateAccuracyIndicatorCodeType" nillable="true"/>
+    <xsd:element name="DateRange" type="nc:DateRangeType" nillable="true"/>
+    <xsd:element name="DateRepresentation" abstract="true"/>
+    <xsd:element substitutionGroup="nc:DateRepresentation" name="DateTime" type="niem-xsd:dateTime" nillable="true"/>
+    <xsd:element name="DescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DispositionCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DispositionDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DispositionDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DispositionEntity" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="DispositionInstrument" type="nc:DocumentType" nillable="true"/>
+    <xsd:element name="DispositionReasonText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DispositionReportedAuthorityText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DispositionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DistributionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentReference" type="s:ReferenceType"/>
+    <xsd:element name="Document" type="nc:DocumentType" nillable="true"/>
+    <xsd:element name="DocumentAlternativeTitleText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentApplicationName" type="nc:ApplicationNameType" nillable="true"/>
+    <xsd:element name="DocumentApprovedIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="DocumentAuthor" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="DocumentBinary" type="nc:BinaryType" nillable="true"/>
+    <xsd:element name="DocumentCategoryDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentCategoryID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="DocumentCategoryName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentContentListText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentContributor" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="DocumentCopyrightIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="DocumentCountryCode" abstract="true"/>
+    <xsd:element name="DocumentCoverage" abstract="true"/>
+    <xsd:element substitutionGroup="nc:DocumentCoverage" name="DocumentCoverageTextAddress" type="nc:AddressType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:DocumentCoverage" name="DocumentCoverageTextDate" type="nc:DateType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:DocumentCoverage" name="DocumentCoverageTextText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentCreationDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentCreator" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="DocumentDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentDispositionAuthorityName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentDispositionInstructionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentDisputedIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="DocumentDisputedReasonText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentEffectiveDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentEntrySubmitter" type="nc:PersonType" nillable="true"/>
+    <xsd:element name="DocumentExpirationDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentFileControlID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="DocumentFileExtensionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentFileName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentFiledDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentFormatCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentFormatText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentGroupID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="DocumentIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="DocumentInformationCutOffDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentIntelligenceCategoryCode" type="dod_jcs-pub2.0:DocumentIntelligenceCategoryCodeType" nillable="true"/>
+    <xsd:element name="DocumentKeywordText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentLanguage" abstract="true"/>
+    <xsd:element substitutionGroup="nc:DocumentLanguage" name="DocumentLanguageCode" type="iso_639-3:LanguageCodeType" nillable="true"/>
+    <xsd:element name="DocumentLastModifiedDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentLocation" type="nc:LocationType" nillable="true"/>
+    <xsd:element name="DocumentLocationURI" type="niem-xsd:anyURI" nillable="true"/>
+    <xsd:element name="DocumentManagementCyclePeriodText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentMediaCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentMediumText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentOtherAddresseeName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentPermanentRecordIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="DocumentPostDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentPrivacyActIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="DocumentPublicationDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentReceivedDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="DocumentRecipient" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="DocumentRelatedResourceText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentRelationText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentRightsText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentSequenceID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="DocumentSource" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="DocumentSourceText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentStatus" type="nc:StatusType" nillable="true"/>
+    <xsd:element name="DocumentSubjectCode" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentSubjectText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentSubmissionFee" type="nc:AmountType" nillable="true"/>
+    <xsd:element name="DocumentSubmitter" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="DocumentSummaryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentSupplementalMarkingText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentTitleText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="DocumentVitalIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="EffectiveDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="EmploymentContactInformationReference" type="s:ReferenceType"/>
+    <xsd:element name="EndDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="EntityReference" type="s:ReferenceType"/>
+    <xsd:element name="Entity" type="nc:EntityType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:EntityRepresentation" name="EntityOrganizationReference" type="s:ReferenceType"/>
+    <xsd:element substitutionGroup="nc:EntityRepresentation" name="EntityOrganization" type="nc:OrganizationType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:EntityRepresentation" name="EntityPersonReference" type="s:ReferenceType"/>
+    <xsd:element substitutionGroup="nc:EntityRepresentation" name="EntityPerson" type="nc:PersonType" nillable="true"/>
+    <xsd:element name="EntityRepresentation" abstract="true"/>
+    <xsd:element name="ExpirationDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="FacilityReference" type="s:ReferenceType"/>
+    <xsd:element name="Facility" type="nc:FacilityType" nillable="true"/>
+    <xsd:element name="FacilityAssociation" type="nc:FacilityAssociationType" nillable="true"/>
+    <xsd:element name="FacilityCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="FacilityCommercialIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="FacilityContactInformation" type="nc:ContactInformationType" nillable="true"/>
+    <xsd:element name="FacilityContainsItem" type="nc:ItemType" nillable="true"/>
+    <xsd:element name="FacilityDocumentAssociation" type="nc:FacilityDocumentAssociationType" nillable="true"/>
+    <xsd:element name="FacilityIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="FacilityImageAssociation" type="nc:FacilityImageAssociationType" nillable="true"/>
+    <xsd:element name="FacilityLocation" type="nc:LocationType" nillable="true"/>
+    <xsd:element name="FacilityName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="FacilityOrganizationAssociation" type="nc:FacilityOrganizationAssociationType" nillable="true"/>
+    <xsd:element name="FacilityPersonAssociation" type="nc:FacilityPersonAssociationType" nillable="true"/>
+    <xsd:element name="FamilyAssociation" type="nc:PersonAssociationType" nillable="true"/>
+    <xsd:element name="FamilyKinshipCategory" abstract="true"/>
+    <xsd:element substitutionGroup="nc:FamilyKinshipCategory" name="FamilyKinshipCode" type="nonauth:FamilyKinshipCodeType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:FamilyKinshipCategory" name="FamilyKinshipText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="FeeReference" type="s:ReferenceType"/>
+    <xsd:element name="Fee" type="nc:ObligationType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:TelephoneNumberRepresentation" name="FullTelephoneNumber" type="nc:FullTelephoneNumberType" nillable="true"/>
+    <xsd:element name="GeographicCoordinateLatitude" type="nc:LatitudeCoordinateType" nillable="true"/>
+    <xsd:element name="GeographicCoordinateLongitude" type="nc:LongitudeCoordinateType" nillable="true"/>
+    <xsd:element name="GeographicDatumCode" type="nga:DatumCodeType" nillable="true"/>
+    <xsd:element name="GeographicElevationDatumID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="GeographicElevationMeasure" type="nc:GeographicElevationMeasureType" nillable="true"/>
+    <xsd:element name="Identification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="IdentificationCategory" abstract="true"/>
+    <xsd:element name="IdentificationCategoryDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:IdentificationCategory" name="IdentificationCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="IdentificationEffectiveDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="IdentificationExpirationDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="IdentificationID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="IdentificationJurisdiction" abstract="true"/>
+    <xsd:element substitutionGroup="nc:IdentificationJurisdiction" name="IdentificationJurisdictionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="IdentificationSourceText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="IdentificationStatus" type="nc:StatusType" nillable="true"/>
+    <xsd:element name="ImageReference" type="s:ReferenceType"/>
+    <xsd:element name="Image" type="nc:ImageType" nillable="true"/>
+    <xsd:element name="ImageHeightValue" type="niem-xsd:integer" nillable="true"/>
+    <xsd:element name="ImageLocation" type="nc:LocationType" nillable="true"/>
+    <xsd:element name="ImageOperator" type="nc:PersonType" nillable="true"/>
+    <xsd:element name="ImageWidthValue" type="niem-xsd:integer" nillable="true"/>
+    <xsd:element name="InstantMessengerClientName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="InstantMessengerScreenID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="IntangibleItem" type="nc:IntangibleItemType" nillable="true"/>
+    <xsd:element name="IntellectualItemBusinessAreaText" type="nc:TextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:TelephoneNumberRepresentation" name="InternationalTelephoneNumber" type="nc:InternationalTelephoneNumberType" nillable="true"/>
+    <xsd:element name="ItemReference" type="s:ReferenceType"/>
+    <xsd:element name="ItemActionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemAgeMeasure" type="nc:TimeMeasureType" nillable="true"/>
+    <xsd:element name="ItemBarCodeIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ItemBinary" type="nc:BinaryType" nillable="true"/>
+    <xsd:element name="ItemBrandName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="ItemCategory" abstract="true"/>
+    <xsd:element substitutionGroup="nc:ItemCategory" name="ItemCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemColor" abstract="true"/>
+    <xsd:element substitutionGroup="nc:ItemColor" name="ItemColorDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemConditionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemDealerIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ItemDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemDisposition" type="nc:ItemDispositionType" nillable="true"/>
+    <xsd:element name="ItemHeightMeasure" type="nc:LengthMeasureType" nillable="true"/>
+    <xsd:element name="ItemImage" type="nc:ImageType" nillable="true"/>
+    <xsd:element name="ItemLengthMeasure" type="nc:LengthMeasureType" nillable="true"/>
+    <xsd:element name="ItemLocationAssociation" type="nc:ItemLocationAssociationType" nillable="true"/>
+    <xsd:element name="ItemMakeName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="ItemModelName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="ItemModelYearDate" type="niem-xsd:gYear" nillable="true"/>
+    <xsd:element name="ItemName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemOtherIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ItemOwner" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="ItemOwnerAppliedID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="ItemOwnerPurchasedValue" type="nc:ItemValueType" nillable="true"/>
+    <xsd:element name="ItemPossessionDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemPossessor" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="ItemPurchasePriceValue" type="nc:ItemValueType" nillable="true"/>
+    <xsd:element name="ItemQuantity" type="nc:QuantityType" nillable="true"/>
+    <xsd:element name="ItemRFIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ItemReceiptIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ItemSerialIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ItemSizeDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemStateIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="ItemStatus" type="nc:StatusType" nillable="true"/>
+    <xsd:element name="ItemStyle" abstract="true"/>
+    <xsd:element name="ItemUsageText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemValue" type="nc:ItemValueType" nillable="true"/>
+    <xsd:element name="ItemValueAmount" type="nc:AmountType" nillable="true"/>
+    <xsd:element name="ItemValueAssigner" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="ItemValueAssigningMethodText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemValueDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="ItemValueDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ItemValueTaxIncludedIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="ItemVisibleID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="ItemWeightMeasure" type="nc:WeightMeasureType" nillable="true"/>
+    <xsd:element name="ItemWidthMeasure" type="nc:LengthMeasureType" nillable="true"/>
+    <xsd:element name="JurisdictionReference" type="s:ReferenceType"/>
+    <xsd:element name="Jurisdiction" type="nc:JurisdictionType" nillable="true"/>
+    <xsd:element name="JurisdictionIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="JurisdictionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="Language" abstract="true"/>
+    <xsd:element substitutionGroup="nc:Language" name="LanguageCode" type="iso_639-3:LanguageCodeType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:Language" name="LanguageName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LanguageText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LastUpdatedDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="LastVerifiedDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="LatitudeCoordinate" type="nc:LatitudeCoordinateType" nillable="true"/>
+    <xsd:element name="LatitudeDegreeValue" type="nc:LatitudeDegreeType" nillable="true"/>
+    <xsd:element name="LatitudeMinuteValue" type="nc:AngularMinuteType" nillable="true"/>
+    <xsd:element name="LatitudeSecondValue" type="nc:AngularSecondType" nillable="true"/>
+    <xsd:element name="LengthUnitCode" type="unece:LengthCodeType" nillable="true"/>
+    <xsd:element name="Locale" type="nc:LocaleType" nillable="true"/>
+    <xsd:element name="LocaleCensusBlockID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="LocaleCensusTractID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="LocaleCommunityName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocaleDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocaleDistrictName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocaleEmergencyServicesCityName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocaleEmergencyServicesJurisdictionID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="LocaleFireJurisdictionID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="LocaleJudicialDistrictCode" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocaleJudicialDistrictName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocaleNeighborhoodName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocalePoliceBeatText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocalePoliceGridText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocalePoliceJurisdictionID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="LocaleRegionName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocaleSubdivisionName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocaleZoneName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocationReference" type="s:ReferenceType"/>
+    <xsd:element name="Location" type="nc:LocationType" nillable="true"/>
+    <xsd:element name="LocationAddress" type="nc:AddressType" nillable="true"/>
+    <xsd:element name="LocationAddressGrid" type="nc:AddressGridType" nillable="true"/>
+    <xsd:element name="LocationAltitudeMeasure" type="nc:LengthMeasureType" nillable="true"/>
+    <xsd:element name="LocationArea" type="nc:AreaType" nillable="true"/>
+    <xsd:element name="LocationCategory" abstract="true"/>
+    <xsd:element substitutionGroup="nc:LocationCategory" name="LocationCategoryCode" type="fbi:LocationCategoryCodeType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:LocationCategory" name="LocationCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocationCityName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="LocationContactInformation" type="nc:ContactInformationType" nillable="true"/>
+    <xsd:element name="LocationContactInformationAssociation" type="nc:LocationContactInformationAssociationType" nillable="true"/>
+    <xsd:element name="LocationContainsOrganizationAssociation" type="nc:OrganizationLocationAssociationType" nillable="true"/>
+    <xsd:element name="LocationCountry" abstract="true"/>
+    <xsd:element substitutionGroup="nc:LocationCountry" name="LocationCountryName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="LocationCounty" abstract="true"/>
+    <xsd:element substitutionGroup="nc:LocationCounty" name="LocationCountyCode" type="fips_6-4:USCountyCodeType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:LocationCounty" name="LocationCountyName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="LocationCrossStreet" type="nc:CrossStreetType" nillable="true"/>
+    <xsd:element name="LocationDepthMeasure" type="nc:LengthMeasureType" nillable="true"/>
+    <xsd:element name="LocationDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocationGeographicElevation" type="nc:GeographicElevationMeasureType" nillable="true"/>
+    <xsd:element name="LocationHighway" type="nc:HighwayType" nillable="true"/>
+    <xsd:element name="LocationLandmarkText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocationLocale" type="nc:LocaleType" nillable="true"/>
+    <xsd:element name="LocationMGRSCoordinate" type="nc:MGRSCoordinateType" nillable="true"/>
+    <xsd:element name="LocationMapLocation" type="nc:MapLocationType" nillable="true"/>
+    <xsd:element name="LocationName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="LocationOrganizationAssociation" type="nc:OrganizationLocationAssociationType" nillable="true"/>
+    <xsd:element name="LocationPostalCode" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="LocationPostalExtensionCode" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="LocationRangeDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocationRelativeLocation" type="nc:RelativeLocationType" nillable="true"/>
+    <xsd:element name="LocationState" abstract="true"/>
+    <xsd:element substitutionGroup="nc:LocationState" name="LocationStateName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:AddressDeliveryPoint" name="LocationStreet" type="nc:StreetType" nillable="true"/>
+    <xsd:element name="LocationSurroundingAreaDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="LocationTwoDimensionalGeographicCoordinate" type="nc:TwoDimensionalGeographicCoordinateType" nillable="true"/>
+    <xsd:element name="LocationUTMCoordinate" type="nc:UTMCoordinateType" nillable="true"/>
+    <xsd:element name="LongitudeCoordinate" type="nc:LongitudeCoordinateType" nillable="true"/>
+    <xsd:element name="LongitudeDegreeValue" type="nc:LongitudeDegreeType" nillable="true"/>
+    <xsd:element name="LongitudeMinuteValue" type="nc:AngularMinuteType" nillable="true"/>
+    <xsd:element name="LongitudeSecondValue" type="nc:AngularSecondType" nillable="true"/>
+    <xsd:element name="MGRSCoordinate" type="nc:MGRSCoordinateType" nillable="true"/>
+    <xsd:element name="MGRSCoordinateID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="MGRSCoordinateSquareID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="MapCoordinateFullText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MapDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="MapElevationCoordinateText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MapHorizontalCoordinateText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MapLocation" type="nc:MapLocationType" nillable="true"/>
+    <xsd:element name="MapLocationDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MapName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MapPageID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="MapQuadrantText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MapVersionID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="MapVerticalCoordinateText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MarginDuration" type="niem-xsd:duration" nillable="true"/>
+    <xsd:element name="MarriageAssociation" type="nc:PersonUnionAssociationType" nillable="true"/>
+    <xsd:element name="Measure" type="nc:MeasureType" nillable="true"/>
+    <xsd:element name="MeasureCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MeasureDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="MeasureEstimatedIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="MeasureMetadata" type="nc:MeasureMetadataType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:MeasureValue" name="MeasurePointValue" type="nc:MeasurePointValueType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:MeasureValue" name="MeasureRangeValue" type="nc:MeasureRangeValueType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:MeasureValue" name="MeasureText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MeasureUnitText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MeasureValue" abstract="true"/>
+    <xsd:element name="Measurer" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="MedicalConditionCauseText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MedicalConditionDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MedicalConditionPresentIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="MedicalConditionSeverityText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="MedicalConditionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="Metadata" type="nc:MetadataType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:TelephoneNumberRepresentation" name="NANPTelephoneNumber" type="nc:NANPTelephoneNumberType" nillable="true"/>
+    <xsd:element name="ObligationReference" type="s:ReferenceType"/>
+    <xsd:element name="Obligation" type="nc:ObligationType" nillable="true"/>
+    <xsd:element name="ObligationDue" abstract="true"/>
+    <xsd:element substitutionGroup="nc:ObligationDue" name="ObligationDueAmount" type="nc:AmountType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ObligationDue" name="ObligationDueDuration" type="niem-xsd:duration" nillable="true"/>
+    <xsd:element name="ObligationPaid" abstract="true"/>
+    <xsd:element substitutionGroup="nc:ObligationPaid" name="ObligationPaidAmount" type="nc:AmountType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ObligationPaid" name="ObligationPaidDuration" type="niem-xsd:duration" nillable="true"/>
+    <xsd:element name="ObligationTotal" abstract="true"/>
+    <xsd:element substitutionGroup="nc:ObligationTotal" name="ObligationTotalAmount" type="nc:AmountType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:ObligationTotal" name="ObligationTotalDuration" type="niem-xsd:duration" nillable="true"/>
+    <xsd:element name="OrganizationReference" type="s:ReferenceType"/>
+    <xsd:element name="Organization" type="nc:OrganizationType" nillable="true"/>
+    <xsd:element name="OrganizationAbbreviationText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="OrganizationActivityText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="OrganizationAssociation" type="nc:OrganizationAssociationType" nillable="true"/>
+    <xsd:element name="OrganizationBranchName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="OrganizationCategory" abstract="true"/>
+    <xsd:element substitutionGroup="nc:OrganizationCategory" name="OrganizationCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="OrganizationContactInformationAssociation" type="nc:OrganizationContactInformationAssociationType" nillable="true"/>
+    <xsd:element name="OrganizationDayContactInformation" type="nc:ContactInformationType" nillable="true"/>
+    <xsd:element name="OrganizationDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="OrganizationDoingBusinessAsName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="OrganizationEmergencyContactInformation" type="nc:ContactInformationType" nillable="true"/>
+    <xsd:element name="OrganizationEstablishedDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="OrganizationEveningContactInformation" type="nc:ContactInformationType" nillable="true"/>
+    <xsd:element name="OrganizationFacilityAssociation" type="nc:OrganizationFacilityAssociationType" nillable="true"/>
+    <xsd:element name="OrganizationIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="OrganizationIncorporatedIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="OrganizationItemAssociation" type="nc:OrganizationItemAssociationType" nillable="true"/>
+    <xsd:element name="OrganizationLocalIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="OrganizationLocation" type="nc:LocationType" nillable="true"/>
+    <xsd:element name="OrganizationName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="OrganizationNightContactInformation" type="nc:ContactInformationType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:FacilityOrganizationAssociation" name="OrganizationOperatesFacilityAssociation" type="nc:FacilityOrganizationAssociationType" nillable="true"/>
+    <xsd:element name="OrganizationOtherIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="OrganizationOwnsItemAssociation" type="nc:OrganizationItemAssociationType" nillable="true"/>
+    <xsd:element name="OrganizationParent" abstract="true"/>
+    <xsd:element name="OrganizationPrimaryContactInformation" type="nc:ContactInformationType" nillable="true"/>
+    <xsd:element name="OrganizationPrincipalOfficial" type="nc:PersonType" nillable="true"/>
+    <xsd:element name="OrganizationStatus" type="nc:StatusType" nillable="true"/>
+    <xsd:element name="OrganizationSubUnit" type="nc:OrganizationType" nillable="true"/>
+    <xsd:element name="OrganizationSubUnitName" type="nc:TextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:FacilityOrganizationAssociation" name="OrganizationSupervisesFacilityAssociation" type="nc:FacilityOrganizationAssociationType" nillable="true"/>
+    <xsd:element name="OrganizationTaxIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="OrganizationTerminationDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="OrganizationUnitName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="Percentage" type="nc:PercentageType" nillable="true"/>
+    <xsd:element name="PersonReference" type="s:ReferenceType"/>
+    <xsd:element name="Person" type="nc:PersonType" nillable="true"/>
+    <xsd:element name="PersonAccentText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonAgeDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonAgeMeasure" type="nc:TimeMeasureType" nillable="true"/>
+    <xsd:element name="PersonAlternateName" type="nc:PersonNameType" nillable="true"/>
+    <xsd:element name="PersonAssociation" type="nc:PersonAssociationType" nillable="true"/>
+    <xsd:element name="PersonBirthDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="PersonBirthLocation" type="nc:LocationType" nillable="true"/>
+    <xsd:element name="PersonBloodType" abstract="true"/>
+    <xsd:element name="PersonBodyXRaysAvailable" abstract="true"/>
+    <xsd:element name="PersonBuildText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonCapability" type="nc:CapabilityType" nillable="true"/>
+    <xsd:element name="PersonChildReference" type="s:ReferenceType"/>
+    <xsd:element name="PersonCircumcisionIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonCitizenship" abstract="true"/>
+    <xsd:element substitutionGroup="nc:PersonCitizenship" name="PersonCitizenshipText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonClothing" type="nc:ClothingType" nillable="true"/>
+    <xsd:element name="PersonComplexionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonComprehendsSpokenLanguageIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonContactInformationAssociation" type="nc:PersonContactInformationAssociationType" nillable="true"/>
+    <xsd:element name="PersonConveyanceAssociation" type="nc:PersonConveyanceAssociationType" nillable="true"/>
+    <xsd:element name="PersonDNA" type="nc:DNAType" nillable="true"/>
+    <xsd:element name="PersonDeathDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="PersonDependentQuantity" type="nc:QuantityType" nillable="true"/>
+    <xsd:element name="PersonDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonDigitalImage" type="nc:ImageType" nillable="true"/>
+    <xsd:element name="PersonDigitizedSignatureImage" type="nc:ImageType" nillable="true"/>
+    <xsd:element name="PersonDisguiseDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonDonorOrgan" abstract="true"/>
+    <xsd:element name="PersonEducationLevelText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonEthnicity" abstract="true"/>
+    <xsd:element name="PersonEyeColor" abstract="true"/>
+    <xsd:element name="PersonEyewearDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonFacialHairText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonFingerprintSet" type="nc:FingerprintSetType" nillable="true"/>
+    <xsd:element name="PersonFullName" type="nc:PersonNameTextType" nillable="true"/>
+    <xsd:element name="PersonGeneralAppearanceDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonGivenName" type="nc:PersonNameTextType" nillable="true"/>
+    <xsd:element name="PersonHairAppearanceText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonHairCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonHairColor" abstract="true"/>
+    <xsd:element name="PersonHairLengthText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonHairStyleText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonHandednessText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonHeightDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonHeightMeasure" type="nc:LengthMeasureType" nillable="true"/>
+    <xsd:element name="PersonHumanResourceIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="PersonInjury" type="nc:InjuryType" nillable="true"/>
+    <xsd:element name="PersonIntoxication" type="nc:IntoxicationType" nillable="true"/>
+    <xsd:element name="PersonItemAssociation" type="nc:PersonItemAssociationType" nillable="true"/>
+    <xsd:element name="PersonJewelryDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonLanguageEnglishIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonLearningDisabilityText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonLicenseIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="PersonLivingIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonMaidenName" type="nc:PersonNameTextType" nillable="true"/>
+    <xsd:element name="PersonMaritalStatusText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonMedicalCondition" type="nc:MedicalConditionType" nillable="true"/>
+    <xsd:element name="PersonMedicalDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonMedicalFileIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonMedicationRequiredText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonMentalStateText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonMiddleName" type="nc:PersonNameTextType" nillable="true"/>
+    <xsd:element name="PersonMilitarySummary" type="nc:MilitarySummaryType" nillable="true"/>
+    <xsd:element name="PersonMoodDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonName" type="nc:PersonNameType" nillable="true"/>
+    <xsd:element name="PersonNamePrefixText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonNameSuffixText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonNameText" type="nc:PersonNameTextType" nillable="true"/>
+    <xsd:element name="PersonNationalIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="PersonNationality" abstract="true"/>
+    <xsd:element name="PersonNationalityText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonOrganDonatorIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonOrganizationAssociation" type="nc:PersonOrganizationAssociationType" nillable="true"/>
+    <xsd:element name="PersonOtherIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="PersonOwnsItemAssociation" type="nc:PersonItemAssociationType" nillable="true"/>
+    <xsd:element name="PersonParentReference" type="s:ReferenceType"/>
+    <xsd:element name="PersonPassportIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="PersonPhysicalDisabilityText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonPhysicalFeature" type="nc:PhysicalFeatureType" nillable="true"/>
+    <xsd:element name="PersonPossessesItemAssociation" type="nc:PersonItemAssociationType" nillable="true"/>
+    <xsd:element name="PersonPrimaryLanguage" type="nc:PersonLanguageType" nillable="true"/>
+    <xsd:element name="PersonRace" abstract="true"/>
+    <xsd:element name="PersonReadsLanguageIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonReligionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonResident" abstract="true"/>
+    <xsd:element name="PersonSSNIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="PersonSecondaryLanguage" type="nc:PersonLanguageType" nillable="true"/>
+    <xsd:element name="PersonSecurityClearance" abstract="true"/>
+    <xsd:element name="PersonSex" abstract="true"/>
+    <xsd:element name="PersonSexualOrientationText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonSkinTone" abstract="true"/>
+    <xsd:element name="PersonSpeaksLanguageIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonSpeechDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonStateIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="PersonSurName" type="nc:PersonNameTextType" nillable="true"/>
+    <xsd:element name="PersonTaxIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="PersonTooth" type="nc:ToothType" nillable="true"/>
+    <xsd:element name="PersonUSCitizenIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonVisionPrescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonWeightDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="PersonWeightMeasure" type="nc:WeightMeasureType" nillable="true"/>
+    <xsd:element name="PersonWritesLanguageIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="PersonXRayImage" type="nc:ImageType" nillable="true"/>
+    <xsd:element name="ProbabilityNumeric" type="nc:PercentageType" nillable="true"/>
+    <xsd:element name="PropertyReference" type="s:ReferenceType"/>
+    <xsd:element name="Property" type="nc:PropertyType" nillable="true"/>
+    <xsd:element name="PropertyCurrentLocationAssociation" type="nc:ItemLocationAssociationType" nillable="true"/>
+    <xsd:element name="PropertyCurrentResaleValue" type="nc:ItemValueType" nillable="true"/>
+    <xsd:element name="PropertyDispositionLocationAssociation" type="nc:ItemLocationAssociationType" nillable="true"/>
+    <xsd:element name="PropertyHolding" type="nc:ItemHoldingType" nillable="true"/>
+    <xsd:element name="PropertyRecoveredValue" type="nc:ItemValueType" nillable="true"/>
+    <xsd:element name="PropertySeizedLocation" type="nc:LocationType" nillable="true"/>
+    <xsd:element name="PropertySeizer" type="nc:EntityType" nillable="true"/>
+    <xsd:element name="PublisherName" type="nc:TextType" nillable="true"/>
+    <xsd:element name="QualityCommentText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="QualityCommentTitleText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="QualityValidityCode" type="twpdes:QualityValidityCategoryCodeType" nillable="true"/>
+    <xsd:element name="RangeMaximumValue" type="niem-xsd:decimal" nillable="true"/>
+    <xsd:element name="RangeMinimumValue" type="niem-xsd:decimal" nillable="true"/>
+    <xsd:element name="RelativeLocationDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="RelativeLocationDirection" abstract="true"/>
+    <xsd:element name="RelativeLocationDistanceText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="RelativeLocationHeadingValue" type="nc:RelativeLocationHeadingType" nillable="true"/>
+    <xsd:element name="RelativeLocationReferencePoint" type="nc:LocationType" nillable="true"/>
+    <xsd:element name="ReleaseDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="ReliabilityNumeric" type="nc:PercentageType" nillable="true"/>
+    <xsd:element name="ReportedDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="ReportingOrganizationText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ReportingPersonRoleText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="ReportingPersonText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="RepositoryID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="RoleOf" abstract="true"/>
+    <xsd:element substitutionGroup="nc:RoleOf" name="RoleOfItemReference" type="s:ReferenceType"/>
+    <xsd:element substitutionGroup="nc:RoleOf" name="RoleOfOrganizationReference" type="s:ReferenceType"/>
+    <xsd:element substitutionGroup="nc:RoleOf" name="RoleOfPersonReference" type="s:ReferenceType"/>
+    <xsd:element name="SecurityLevelText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="SensitivityText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="SourceContactPersonText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="SourceIDText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="SourceText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="SpeedMeasure" type="nc:SpeedMeasureType" nillable="true"/>
+    <xsd:element name="SpeedUnitCode" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="StartDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="Status" type="nc:StatusType" nillable="true"/>
+    <xsd:element name="StatusDate" type="nc:DateType" nillable="true"/>
+    <xsd:element name="StatusDescriptionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="StatusIssuerIdentification" type="nc:IdentificationType" nillable="true"/>
+    <xsd:element name="StatusIssuerText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="StatusText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="StreetCategoryText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="StreetExtensionText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="StreetFullText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="StreetName" type="nc:ProperNameTextType" nillable="true"/>
+    <xsd:element name="StreetNumberText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="StreetPostdirectionalText" type="nc:TextType" nillable="true"/>
+    <xsd:element name="StreetPredirectionalText" type="nc:TextType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:AddressRepresentation" name="StructuredAddress" type="nc:StructuredAddressType" nillable="true"/>
+    <xsd:element name="TangibleItem" type="nc:TangibleItemType" nillable="true"/>
+    <xsd:element name="TelephoneAreaCodeID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="TelephoneCountryCodeID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="TelephoneExchangeID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="TelephoneLineID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="TelephoneNumberReference" type="s:ReferenceType"/>
+    <xsd:element name="TelephoneNumber" type="nc:TelephoneNumberType" nillable="true"/>
+    <xsd:element name="TelephoneNumberFullIDReference" type="s:ReferenceType"/>
+    <xsd:element name="TelephoneNumberFullID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="TelephoneNumberID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="TelephoneNumberRepresentation" abstract="true"/>
+    <xsd:element name="TelephoneSuffixID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="TimeUnitCode" type="unece:TimeCodeType" nillable="true"/>
+    <xsd:element name="UTMCoordinate" type="nc:UTMCoordinateType" nillable="true"/>
+    <xsd:element name="UTMCoordinateID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="UTMDatumID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="UTMEastingValue" type="niem-xsd:nonNegativeInteger" nillable="true"/>
+    <xsd:element name="UTMGridZoneID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="UTMGridZoneSquareID" type="niem-xsd:string" nillable="true"/>
+    <xsd:element name="UTMNorthingValue" type="niem-xsd:nonNegativeInteger" nillable="true"/>
+    <xsd:element name="VehicleReference" type="s:ReferenceType"/>
+    <xsd:element name="Vehicle" type="nc:VehicleType" nillable="true"/>
+    <xsd:element name="VehicleAxleQuantity" type="niem-xsd:nonNegativeInteger" nillable="true"/>
+    <xsd:element name="VehicleCurrentWeightMeasure" type="nc:WeightMeasureType" nillable="true"/>
+    <xsd:element name="VehicleGrossLadenSumWeightMeasure" type="nc:WeightMeasureType" nillable="true"/>
+    <xsd:element name="VehicleGrossLadenUnitWeightMeasure" type="nc:WeightMeasureType" nillable="true"/>
+    <xsd:element name="VehicleMaximumLoadWeightMeasure" type="nc:WeightMeasureType" nillable="true"/>
+    <xsd:element name="VehicleUnladenWeightMeasure" type="nc:WeightMeasureType" nillable="true"/>
+    <xsd:element name="WeaponIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="WeaponUsageIndicator" type="niem-xsd:boolean" nillable="true"/>
+    <xsd:element name="WeightUnitCode" type="unece:MassCodeType" nillable="true"/>
+    <xsd:element substitutionGroup="nc:DateRepresentation" name="Year" type="niem-xsd:gYear" nillable="true"/>
+    <xsd:element substitutionGroup="nc:DateRepresentation" name="YearMonth" type="niem-xsd:gYearMonth" nillable="true"/>
+</xsd:schema>
